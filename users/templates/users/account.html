@@ -1,0 +1,14 @@
+{% block content %}
+
+<h2>Account details</h2>
+<a href="/">Back</a>
+<a href="{% url 'delete-profile' profile.id %}">Delete</a>
+<a href="{% url 'edit-account' %}">Edit</a>
+
+<hr>
+<h4>{{profile.name}}</h4>
+<h4>{{profile.email}}</h4>
+<h4>{{profile.username}}</h4>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% block content %}
+
+<!-- Main Section -->
+<h2>delete page</h2>
+<hr>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{object}}"?</p>
+    <a href="{% url 'account' %}">Back</a>
+
+    <input type="submit" value="Confirm" />
+</form>
+
+{% endblock %}

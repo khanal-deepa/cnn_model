@@ -1,0 +1,25 @@
+{% block content %}
+
+<div>
+    <h2>Profile Form</h2>
+
+    <hr>
+    <a href="/">Back to Profile</a>
+
+    <form action="{% url 'edit-account' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <!-- {% for field in form %}
+        <div>
+            <label>{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %} -->
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+
+{% endblock %}

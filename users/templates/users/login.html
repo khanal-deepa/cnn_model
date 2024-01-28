@@ -1,0 +1,130 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .back-button {
+            background-color: #ccc;
+            color: #333;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        }
+
+        div {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        h3 {
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a class="back-button" href="/">Back</a>
+        <h3>
+            Account Login
+        </h3>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <!-- Input:Username -->
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username..." required />
+
+            <!-- Input:Password -->
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="••••••••" required />
+
+            <input type="submit" value="Log In" />
+            <a href="{% url 'reset_password' %}">Forget Password?</a>
+        </form>
+
+        <p>Don’t have an Account? <a href="{% url 'register' %}">Sign Up</a></p>
+    </div>
+</body>
+
+</html>
+{% endblock %}
