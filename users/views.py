@@ -20,11 +20,16 @@ def index(request):
 def start_test(request):
     try:
         # Replace 'python test.py' with the appropriate command to start your backend server
+<<<<<<< HEAD
         subprocess.run(['python', 'users/test.py'])
+=======
+        subprocess.run(['python3', 'users/test.py'])
+>>>>>>> e95a7396 (first commit)
         return HttpResponse('Backend server started successfully!')
     except Exception as e:
         return HttpResponse(f'Error starting backend server: {e}')
 
+<<<<<<< HEAD
 
 # def start_test(request):
 #     try:
@@ -44,6 +49,8 @@ def start_test(request):
 #         return HttpResponse(f'Error: {e}')
 
 
+=======
+>>>>>>> e95a7396 (first commit)
 def loginUser(request):
     page = 'login'
 

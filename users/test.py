@@ -8,7 +8,11 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 data_generator = ImageDataGenerator(samplewise_center=True, samplewise_std_normalization=True)
 
 # Loading the model.
+<<<<<<< HEAD
 MODEL_NAME = 'users/asl_alphabet_{}.h5'.format(9575)
+=======
+MODEL_NAME = 'asl_alphabet_{}.h5'.format(9575)
+>>>>>>> e95a7396 (first commit)
 model = load_model(MODEL_NAME)
 
 # Setting up the input image size and frame crop size.
@@ -16,7 +20,11 @@ IMAGE_SIZE = 200
 CROP_SIZE = 400
 
 # Creating list of available classes stored in classes.txt.
+<<<<<<< HEAD
 classes_file = open("users/classes.txt")
+=======
+classes_file = open("classes.txt")
+>>>>>>> e95a7396 (first commit)
 classes_string = classes_file.readline()
 classes = classes_string.split()
 classes.sort()  # The predict function sends out output in sorted order.
